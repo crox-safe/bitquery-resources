@@ -45,10 +45,9 @@ Also, you don't need to be a javascript or react expert to understand the code.
 
 To start with our application we will use the `create-react-app` package to create the application in a fast way.
 
-```
+```bash
 npx create-react-app bitquery-tradingview
 cd bitquery-tradingview
-npm start
 ```
 
 Now install axios:
