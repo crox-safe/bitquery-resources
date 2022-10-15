@@ -13,6 +13,11 @@
 
 In this short post we will see how to use https://www.tradingview.com/lightweight-charts/ with a react application.
 
+> To run just use: \
+> `npm install` \
+> Edit file `bitqueryData.js` with your API Key \
+> `npm start`
+
 What will it be useful for? This mini application will help us to create an OHLC chart to represent the price of a token, in this case WBNB/BUSD.
 
 This application will be quite simple, however **if the article has enough support we will update the application to be able to**:
@@ -96,7 +101,7 @@ Remember to put your API Key in `API_KEY`
 
 `src/utils/bitqueryData.js`:
 
-```
+```javascript
 import axios from "axios";
 
 const ENDPOINT = "https://graphql.bitquery.io";
@@ -117,7 +122,6 @@ const getBitqueryData = async (query) => {
 };
 
 const dateFunc = (startDate, days, add) => {
-
   if (add) {
     return new Date(new Date().setDate(startDate.getDate() + days))
       .toISOString()
@@ -199,7 +203,7 @@ export const getTokenInfo = async () => {
 Now we will go to the `App.js` file and delete everything and put this:
 `App.js`:
 
-```
+```javascript
 import { ChartBitquery } from "./components/ChartBitquery";
 
 export default function App() {
